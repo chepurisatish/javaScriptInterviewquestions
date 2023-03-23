@@ -1,0 +1,58 @@
+ <!-- Mouse Events 
+click -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        change{
+            font-size: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mouse Event</h1>
+    <p id="clk">click:-when the mouse click on the element</p>
+     <button type="button" onclick="user1()">click</button> 
+    <p id="output"></p>
+</body>
+ <script>
+    document.getElementById("clk").addEventListener("click", user1);
+    // document.getElementById("clk").addEventListener("mouseover", user2);
+    // document.getElementById("clk").addEventListener("mouseout", user3);
+    // document.getElementById("clk").addEventListener("mousedown", user4);
+    // document.getElementById("clk").addEventListener("mouseup", user5);
+
+    function user1(){
+        document.getElementById("clk").setAttribute("style","font-size:30px;color:red")
+    }
+
+    function user1(){
+        document.getElementById("clk").setAttribute("id","change")
+    }
+
+    function user1(){
+        document.getElementById("clk").innerHTML="by click on the paragraph" + "<br>" +" we will get the output like this"
+    }
+    function user2(){
+        document.getElementById("output").innerHTML="by click on the paragraph" + "<br>" +" we will get the output like this"
+    }
+    function user3(){
+        document.getElementById("output").innerHTML=""
+    }
+    function user4(){
+        document.getElementById("output").innerHTML="by click on the paragraph" + "<br>" +" we will get the output like this"
+    }
+    function user5(){
+        document.getElementById("output").innerHTML=""
+    }
+</script>
+</html>  
+
+
+
+

@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Event Capturing Example</title>
+</head>
+<body>
+	<div id="outer">
+		<div id="middle">
+			<div id="inner">
+				<button id="myButton">Click Me</button>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function handleClick(event) {
+			console.log(event.target.id + " was clicked!");
+		}
+
+		var outer = document.querySelector("#outer");
+		var middle = document.querySelector("#middle");
+		var inner = document.querySelector("#inner");
+		var myButton = document.querySelector("#myButton");
+
+		outer.addEventListener("click", handleClick, true);
+		middle.addEventListener("click", handleClick, true);
+		inner.addEventListener("click", handleClick, true);
+		myButton.addEventListener("click", handleClick, true);
+
+	</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<style>
+		div {
+			color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		h2 {
+			color: black;
+		}
+		#grandparent {
+			background-color: green;
+			width: 300px;
+			height: 300px;
+		}
+		#parent {
+			background-color: blue;
+			width: 200px;
+			height: 200px;
+		}
+		#child {
+			background-color: red;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<!-- <h2>Event Capturing</h2> -->
+		<h2>Event Bubbling</h2>
+		<div id="grandparent">GrandParent
+			<div id="parent">Parent
+			 <div id="child">Child</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		const grandParent = document.getElementById("grandparent");
+		const parent = document.getElementById("parent");
+		const child = document.getElementById("child");
+
+		grandParent.addEventListener("click", (e) => {
+			console.log("GrandParent");
+			// event.stopPropagation();
+		}, { capture: true });
+
+		parent.addEventListener("click", (e) => {
+			console.log("Parent");
+			// event.stopPropagation();
+		}, { capture: false });
+
+		child.addEventListener("click", (e) => {
+			console.log("Child");
+			event.stopPropagation();
+		}, { capture: false });
+	</script>
+</body>
+</html>
